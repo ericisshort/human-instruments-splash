@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Instruments</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e6e3da;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+        }
+
+        .logo-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            width: 80vw;
+            max-width: 80vh;
+            height: auto;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="img/Human-Instruments-Branding-Exploration-04.05.25_LOGO-2-transparent.png" alt="Human Instruments">
+    </div>
+
+    <script>
+        function scaleLogo() {
+            const logoContainer = document.querySelector('.logo-container');
+            const vh = window.innerHeight;
+            const vw = window.innerWidth;
+            
+            if (vw / vh > 1) {
+                logoContainer.style.width = '80vh';
+                logoContainer.style.maxWidth = '80vw';
+            } else {
+                logoContainer.style.width = '80vw';
+                logoContainer.style.maxWidth = '80vh';
+            }
+        }
+        
+        scaleLogo();
+        window.addEventListener('resize', scaleLogo);
+    </script>
+</body>
+</html>
